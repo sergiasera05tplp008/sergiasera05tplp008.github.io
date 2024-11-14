@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Menarik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff7e50, #ffcc29);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+        }
+
+        .calculator {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 15px; /* Reduced padding */
+            width: 350px; /* Reduced width */
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .calculator h1 {
+            text-align: center;
+            margin-bottom: 15px; /* Reduced margin */
+            color: #333;
+            font-size: 1.8em; /* Reduced font size */
+        }
+
+        .calculator-display {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            height: 50px; /* Reduced height */
+            text-align: right;
+            padding: 10px; /* Reduced padding */
+            font-size: 28px; /* Reduced font size */
+            margin-bottom: 10px;
+            overflow: hidden;
+            position: relative;
+            color: #333;
+        }
+
+        .calculator-history {
+            background: #eee;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            height: 30px; /* Reduced height */
+            text-align: right;
+            padding: 8px; /* Reduced padding */
+            font-size: 16px; /* Reduced font size */
+            margin-bottom: 15px; /* Reduced margin */
+            color: #555;
+        }
+
+        .calculator-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px; /* Reduced gap */
+        }
+
+        .calculator-buttons button {
+            padding: 15px; /* Reduced padding */
+            font-size: 16px; /* Reduced font size */
+            border: none;
+            border-radius: 8px;
+            background: #ff6f20;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.1s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .calculator-buttons button:hover {
+            background: #e65c1b;
+            transform: translateY(-2px);
+        }
+
+        .calculator-buttons button:active {
+            background: #c5531a;
+            transform: translateY(0);
+        }
+
+        .operator {
+            background: #ff4d00;
+        }
+
+        .operator:hover {
+            background: #e64300;
+        }
+
+        .clear {
+            background: #f44336;
+        }
+
+        .clear:hover {
+            background: #d32f2f;
+        }
+
+        .percent {
+            background: #ff9800;
+        }
+
+        .percent:hover {
+            background: #fb8c00;
+        }
+
+        .decimal {
+            background: #2196f3;
+        }
+
+        .decimal:hover {
+            background: #1976d2;
+        }
+
+        .result-success {
+            color: green;
+        }
+
+        .result-error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <h1>Kalkulator</h1>
+        <div class="calculator-history" id="history">0</div>
+        <div class="calculator-display" id="display">0</div>
+        <div class="calculator-buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('÷')">÷</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('×')">×</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+
+            <button onclick="appendToDisplay('0')">0</button>
+            <button class="decimal" onclick="appendToDisplay('.')">.</button>
+            <button class="percent" onclick="appendToDisplay('%')">%</button>
+            <button class="operator" onclick="calculateResult()">=</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+            <button class="operator" onclick="deleteLastCharacter()">DEL</button>
+        </div>
+    </div>
+
+    <script>
+        let display = document.getElementById('display');
+        let history = document.getElementById('history');
+
+        function appendToDisplay(value) {
+            if (display.innerText === '0' && value !== '.') {
+                display.innerText = '';
+            }
+            if (value === '.' && display.innerText.includes('.')) return;
+            if (display.innerText === 'Error') {
+                display.innerText = '';
+            }
+            display.innerText += value;
+            updateHistory();
+        }
+
+        function clearDisplay() {
+            display.innerText = '0';
+            history.innerText = '0';
+            display.classList.remove('result-success', 'result-error');
+        }
+
+        function updateHistory() {
+            history.innerText = display.innerText;
+        }
+
+        function deleteLastCharacter() {
+            if (display.innerText.length > 1) {
+                display.innerText = display.innerText.slice(0, -1);
+            } else {
+                display.innerText = '0';
+            }
+            updateHistory();
+        }
+
+        function calculateResult() {
+            try {
+                let expression = display.innerText.replace(/×/g, '*').replace(/÷/g, '/');
+                expression = expression.replace(/%/g, '/100');
+                const result = eval(expression);
+                display.innerText = result || '0';
+                display.classList.add('result-success');
+                updateHistory();
+            } catch {
+                display.innerText = 'Error';
+                display.classList.add('result-error');
+            }
+        }
+    </script>
+</body>
+</html>

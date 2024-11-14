@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sergia Eliani Sera - Portfolio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="icon" href="img/Immagine WhatsApp 2024-09-30 ore 16.33.22_7a929c79.jpg">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body id="body">
+	<!-- Loading Screen -->
+	<div class="loading" id="loading">
+		<div class="loading-item"></div>
+	</div>
+
+	<!-- Navbar -->
+	<div class="navbar notload" id="navbar">
+		<div class="container">
+			<div class="navbar-nav">
+				<div class="navbar-brand">
+					<img src="img/Immagine WhatsApp 2024-09-30 ore 16.32.35_dcbc44f9.jpg" alt="logo" draggable="false">
+					<span>Sergia</span>
+				</div>
+				<span class="navbar-toggler" id="toggler">
+					<i onclick="toggleNavbar()" id="navbar-toggler" class="fas fa-bars"></i>
+				</span>
+				<div class="navs" id="navs"> 
+					<ul>
+						<li><a href="#about" onclick="toggleNavbar()">About Me</a></li>
+						<li><a href="#projects" onclick="toggleNavbar()">Projects</a></li>
+						<li><a href="#certificates" onclick="toggleNavbar()">Certificates</a></li>		
+						<li><a href="https://github.com/sergia250205/sergia250205.github.io.git" target="_blank">GitHub</a></li>					
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Jumbotron -->
+	<div class="jumbotron-box">
+		<div class="container">
+			<div class="jumbotron">
+				<div class="jumbotron-item">
+					<img src="img/Immagine WhatsApp 2024-10-07 ore 20.32.27_ada5e48a.jpg" alt="logo" class="profile-img" draggable="false">
+				</div>
+				<div class="jumbotron-item">
+					<h1><strong>Sergia Eliani Sera</strong></h1>
+					<p>I'm a <strong>Web Developer</strong></p>
+					<p>Email: <a href="mailto:ellylandak0@gmail.com" class="email-link">ellylandak0@gmail.com</a></p>
+					<div class="social-links">
+						<a href="https://www.instagram.com/username" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+						<a href="https://www.linkedin.com/in/username" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+						<a href="mailto:ellylandak0@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- About Me Section -->
+	<div class="main2" id="about">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+			<path fill="#0099ff" fill-opacity="1" d="M0,128L0,32L288,32L288,160L576,160L576,32L864,32L864,128L1152,128L1152,96L1440,96L1440,320L1152,320L1152,320L864,320L864,320L576,320L576,320L288,320L288,320L0,320L0,320Z"></path>
+		</svg>
+		<div class="container">
+			<h2>About Me</h2>
+			<p>Hello! I'm <strong>Sergia Eliani Sera</strong>, a passionate web developer dedicated to crafting dynamic, user-friendly websites that are not only visually appealing but also highly functional. My expertise spans <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, and various other web technologies that allow me to bring ideas to life in the digital space. Each project I take on is an opportunity to push the boundaries of creativity and technology. Thank you for visiting my portfolio – I look forward to connecting!</p>
+		</div>
+	</div>
+	
+
+	<!-- Projects Section -->
+	<div class="main2" id="projects" style="display: flex; justify-content: center; align-items: center; padding: 40px;">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" width="100%" height="400">
+			<path fill="#0099ff" fill-opacity="1" d="M0,128L0,32L288,32L288,160L576,160L576,32L864,32L864,128L1152,128L1152,96L1440,96L1440,320L1152,320L1152,320L864,320L864,320L576,320L576,320L288,320L288,320L0,320L0,320Z"></path>
+		</svg>
+		<div style="display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 30px;">
+			<div class="project" style="width: 400px; text-align: center;">
+				<img src="img/formlogin.png" alt="Project 1" draggable="false" 
+					 style="width: 100%; transition: transform 0.3s; cursor: pointer;"
+					 onmouseover="this.style.transform='scale(1.1)';"
+					 onmouseout="this.style.transform='scale(1)';">
+				<p><strong>Formulir login atau login page</strong></p>
+				<div class="buttons">
+					<a href="formlogin/index.html" class="btn" target="_blank" style="font-size: 1.2em;">Source</a>
+				</div>
+			</div>
+			<div class="project" style="width: 400px; text-align: center;">
+				<img src="img/kalkulator1.png" alt="Project 2" draggable="false" 
+					 style="width: 100%; transition: transform 0.3s; cursor: pointer;"
+					 onmouseover="this.style.transform='scale(1.1)';"
+					 onmouseout="this.style.transform='scale(1)';">
+				<p><strong>Kalkulator</strong></p>
+				<div class="buttons">
+					<a href="kalkulator/index.html" class="btn" target="_blank" style="font-size: 1.2em;">Source</a>
+				</div>
+			</div>
+			<div class="project" style="width: 400px; text-align: center;">
+				<img src="img/dasboard.png" alt="Project 3" draggable="false" 
+					 style="width: 100%; transition: transform 0.3s; cursor: pointer;"
+					 onmouseover="this.style.transform='scale(1.1)';"
+					 onmouseout="this.style.transform='scale(1)';">
+				<p><strong>Dashboard</strong></p>
+				<div class="buttons">
+					<a href="dashboard/index.html" class="btn" target="_blank" style="font-size: 1.2em;">Source</a>
+				</div>
+			</div>
+			<div class="project" style="width: 400px; text-align: center;">
+				<img src="img/tetris.png" alt="Project 4" draggable="false" 
+					 style="width: 100%; transition: transform 0.3s; cursor: pointer;"
+					 onmouseover="this.style.transform='scale(1.1)';"
+					 onmouseout="this.style.transform='scale(1)';">
+				<p><strong>Tetris</strong></p>
+				<div class="buttons">
+					<a href="./tetrissera/index.html" class="btn" target="_blank" style="font-size: 1.2em;">Source</a>
+				</div>
+		</div>
+	</div>
+	
+
+	<!-- Certificates Section -->
+	<div class="main5" id="certificates">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+			<path fill="#0099ff" fill-opacity="1" d="M0,128L0,32L288,32L288,160L576,160L576,32L864,32L864,128L1152,128L1152,96L1440,96L1440,320L1152,320L1152,320L864,320L864,320L576,320L576,320L288,320L288,320L0,320L0,320Z"></path>
+		</svg>
+		<div class="container" style="text-align: center;">
+			<h1>Certificates</h1>
+			<div class="certificate">
+				<a href="https://www.sololearn.com/certificates/CC-YCT1TF94" target="_blank">
+					<img src="img/sertifikat sololearn.html.png" alt="HTML certificate" style="width: 50%; display: inline-block;">
+				</a>
+				<a href="https://www.sololearn.com/certificates/CC-LDXIAPW9" target="_blank">
+					<img src="img/sertifikat sololearn.css.png" alt="CSS certificate" style="width: 50%; display: inline-block;">
+				</a>
+				<a href="https://www.sololearn.com/certificates/CC-CU0XQ88H" target="_blank">
+					<img src="img/sertifikat sololearn.js.jpg" alt="JavaScript certificate" style="width: 50%; display: inline-block;">
+				</a>
+				<a href="https://www.sololearn.com/certificates/CC-YVP2UJZ4" target="_blank">
+					<img src="img/sertifikat sololearn javascript intermediate..jpg" alt="SQL certificate" style="width: 50%; display: inline-block;">
+				</a>
+			</div>
+		</div>
+	</div>
+	
+
+	<!-- JavaScript for Navbar Toggle -->
+	<script type="text/javascript">
+		function toggleNavbar() {
+			const navs = document.getElementById("navs");
+			if (navs.style.display === "block") {
+				navs.style.display = "none";
+			} else {
+				navs.style.display = "block";
+			}
+		}
+	</script>
+	<script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>
