@@ -559,3 +559,138 @@ span.ripple {
 		transform: scale(1);
 	}
 }
+/* Contact Section */
+.contact {
+    padding: 50px 20px;
+    background-color: #f4f7fa; /* Warna latar belakang yang lebih soft */
+    border-radius: 10px; /* Membuat sudut membulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan halus */
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 2.8rem; /* Ukuran font lebih besar */
+    margin-bottom: 40px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 1px; /* Sedikit jarak antar huruf untuk kesan lebih modern */
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px; /* Jarak antar elemen lebih lebar */
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background-color: #fff; /* Memberikan latar belakang putih untuk informasi kontak */
+    border-radius: 10px; /* Sudut membulat pada box */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Memberikan jarak lebih besar antar item */
+}
+
+.contact-item i {
+    font-size: 1.8rem;
+    margin-right: 15px;
+    color: #0099ff;
+    transition: transform 0.3s ease; /* Efek hover untuk ikon */
+}
+
+.contact-item i:hover {
+    transform: scale(1.2); /* Membesarkan ikon saat hover */
+}
+
+.contact-item a,
+.contact-item p {
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+    color: #007acc; /* Ubah warna saat hover */
+}
+
+#contact-form {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Jarak antar input lebih lebar */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan untuk form */
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Sudut membulat */
+    outline: none;
+    transition: border-color 0.3s ease; /* Efek transisi pada border */
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #0099ff; /* Perubahan border saat fokus */
+}
+
+#contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+#contact-form button {
+    padding: 12px 20px;
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efek transisi */
+}
+
+#contact-form button:hover {
+    background-color: #007acc;
+    transform: translateY(-2px); /* Efek tombol melayang saat hover */
+}
+
+.map-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.map-container h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    form#contact-form {
+        max-width: 100%;
+    }
+}
